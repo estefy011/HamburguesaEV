@@ -31,4 +31,9 @@ public partial class BurgerListPage : ContentPage
             EVActualizarLista();
         }
     }
+
+    private void OnCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+
+    }
 }

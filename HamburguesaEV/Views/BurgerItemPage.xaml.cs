@@ -13,7 +13,7 @@ public partial class BurgerItemPage : ContentPage
         BurgerListPage EVburgerListPage = new BurgerListPage();
         EVburgerListPage.EVActualizarLista();
     }
-    private void OnSaveClicked(object sender, EventArgs e)
+    private void EVOnSaveClicked(object sender, EventArgs e)
     {
         Item.Name = nameB.Text;
         Item.Description = descB.Text;
@@ -23,11 +23,16 @@ public partial class BurgerItemPage : ContentPage
         Shell.Current.GoToAsync("///BurgerListPage");
 
     }
-    private void OnCancelClicked(object sender, EventArgs e)
+    private void EVOnCancelClicked(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("///BurgerListPage");
     }
-    private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+
+    private void EVOnBorrarClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("///BurgerListPage");
+    }
+    private void EVOnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         _flag = e.Value;
     }
