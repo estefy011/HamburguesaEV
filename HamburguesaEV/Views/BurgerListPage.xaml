@@ -4,7 +4,9 @@
              x:Class="HamburguesaEV.Views.BurgerListPage"
              xmlns:models="clr-namespace:HamburguesaEV.Models"
 
-             Title="BurgerListPage">
+             Title="BurgerListPageEV">
+    
+
     <VerticalStackLayout>
         <Grid RowDefinitions="*,Auto">
             <CollectionView x:Name="burgerList"
