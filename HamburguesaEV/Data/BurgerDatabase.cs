@@ -22,14 +22,29 @@ namespace HamburguesaEV.Data
         public int AddNewBurger(Burger burger)
         {
             Init();
-            int result = conn.Insert(burger);
-            return result;
+            // int result = conn.Insert(burger);
+            //  return result;
+            if (burger.Id != 0)
+            {
+                conn.Update(burger);
+                return burger.Id;
+            }
+            else
+            {
+                return conn.Insert(burger);
+            }
         }
         public List<Burger> GetAllBurgers()
         {
             Init();
             List<Burger> burgers = conn.Table<Burger>().ToList();
             return burgers;
+        }
+        public int DeleteBurger(Burger item)
+        {
+            Init();
+          
+            return conn.Delete(item);
         }
 
     }

@@ -12,8 +12,7 @@
             <Label Text="Descripción" />
             <Entry x:Name="descB" Text="{Binding Description}" />
             <Label Text="¿Con queso extra?" />
-            <CheckBox x:Name="check"          
-            CheckedChanged="EVOnCheckBoxCheckedChanged" />
+            <CheckBox x:Name="EVcheck" IsChecked="{Binding WithExtraCheese}" /> 
             <Button Text="Guardar"
             Clicked="EVOnSaveClicked" />
             <Button Text="Borrar"
