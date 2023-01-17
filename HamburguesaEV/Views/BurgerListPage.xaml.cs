@@ -9,7 +9,7 @@ public partial class BurgerListPage : ContentPage
     {
         
         InitializeComponent();
-        List<Burger> burger = App.BurgerRepo.GetAllBurgers();
+        List<BurgerEV> burger = App.BurgerRepo.GetAllBurgers();
         burgerList.ItemsSource = burger;
         BindingContext = this;
 
@@ -18,13 +18,13 @@ public partial class BurgerListPage : ContentPage
     {
        Shell.Current.GoToAsync(nameof(BurgerItemPage),true,new Dictionary<string,object>
            {
-           {"Item",new Burger()}
+           {"Item",new BurgerEV()}
        });
 
     }
     public void EVActualizarLista()
     {
-        List<Burger> burger = App.BurgerRepo.GetAllBurgers();
+        List<BurgerEV> burger = App.BurgerRepo.GetAllBurgers();
         burgerList.ItemsSource = burger;
     }
 
@@ -37,6 +37,16 @@ public partial class BurgerListPage : ContentPage
     }
     private void EVOnCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        BurgerEV burger = e.CurrentSelection.FirstOrDefault() as BurgerEV;
+        if (burger == null)
+            return;
+        Shell.Current.GoToAsync(nameof(BurgerItemPage), true, new Dictionary<string, object>
+        {
+            {"Item",burger}
+        });
+        ((CollectionView)sender).SelectedItem = null;
+
+       
 
     }
 }

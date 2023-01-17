@@ -9,9 +9,9 @@ public partial class BurgerItemPage : ContentPage
    // Burger Item = new Burger();
     //bool _flag;
 
-    public Burger Item
+    public BurgerEV Item
     {
-        get => BindingContext as Burger;
+        get => BindingContext as BurgerEV;
         set => BindingContext = value;
 
     }
@@ -42,6 +42,7 @@ public partial class BurgerItemPage : ContentPage
 
     private void EVOnBorrarClicked(object sender, EventArgs e)
     {
+        App.BurgerRepo.DeleteBurger(Item);
         Shell.Current.GoToAsync("///BurgerListPage");
     }
 

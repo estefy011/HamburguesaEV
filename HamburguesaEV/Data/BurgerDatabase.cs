@@ -17,34 +17,34 @@ namespace HamburguesaEV.Data
             if (conn != null)
                 return;
             conn = new SQLiteConnection(_dbPath);
-            conn.CreateTable<Burger>();
+            conn.CreateTable<BurgerEV>();
         }
-        public int AddNewBurger(Burger burger)
+        public int AddNewBurger(BurgerEV burgerEV)
         {
             Init();
             // int result = conn.Insert(burger);
             //  return result;
-            if (burger.Id != 0)
+            if (burgerEV.Id != 0)
             {
-                conn.Update(burger);
-                return burger.Id;
+                conn.Update(burgerEV);
+                return burgerEV.Id;
             }
             else
             {
-                return conn.Insert(burger);
+                return conn.Insert(burgerEV);
             }
         }
-        public List<Burger> GetAllBurgers()
+        public List<BurgerEV> GetAllBurgers()
         {
             Init();
-            List<Burger> burgers = conn.Table<Burger>().ToList();
-            return burgers;
+            List<BurgerEV> burgersEV = conn.Table<BurgerEV>().ToList();
+            return burgersEV;
         }
-        public int DeleteBurger(Burger item)
+        public int DeleteBurger(BurgerEV itemEV)
         {
             Init();
-          
-            return conn.Delete(item);
+
+            return conn.Delete(itemEV);
         }
 
     }

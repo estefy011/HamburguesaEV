@@ -11,7 +11,7 @@
                 SelectionMode="Single"
                 SelectionChanged="EVOnCollectionView_SelectionChanged">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Burger">
+                    <DataTemplate x:DataType="models:BurgerEV">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />

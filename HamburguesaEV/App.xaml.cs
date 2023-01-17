@@ -7,12 +7,12 @@ public partial class App : Application
 {
     public static BurgerDatabase BurgerRepo { get; private set; }
 
-    public App(BurgerDatabase repo)
+    public App(BurgerDatabase repoEV)
     {
         InitializeComponent();
 
         MainPage = new AppShell();
 
-        BurgerRepo = repo;
+        BurgerRepo = repoEV;
     }
 }
