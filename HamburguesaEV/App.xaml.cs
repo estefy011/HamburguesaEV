@@ -5,9 +5,9 @@ namespace HamburguesaEV;
 
 public partial class App : Application
 {
-    public static BurgerDatabase BurgerRepo { get; private set; }
+    public static EV_BurgerDatabase BurgerRepo { get; private set; }
 
-    public App(BurgerDatabase repoEV)
+    public App(EV_BurgerDatabase repoEV)
     {
         InitializeComponent();
 

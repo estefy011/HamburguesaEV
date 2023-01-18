@@ -4,11 +4,11 @@ using SQLite;
 
 namespace HamburguesaEV.Data
 {
-    public class BurgerDatabase
+    public class EV_BurgerDatabase
     {
         string _dbPath;
         private SQLiteConnection conn;
-        public BurgerDatabase(string DatabasePath)
+        public EV_BurgerDatabase(string DatabasePath)
         {
             _dbPath = DatabasePath;
         }
