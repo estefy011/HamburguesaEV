@@ -40,11 +40,7 @@ public partial class BurgerListPage : ContentPage
         BurgerEV burger = e.CurrentSelection.FirstOrDefault() as BurgerEV;
         if (burger == null)
             return;
-        Shell.Current.GoToAsync(nameof(BurgerItemPage), true, new Dictionary<string, object>
-        {
-            {"Item",burger}
-        });
-        ((CollectionView)sender).SelectedItem = null;
+        
 
        
 
